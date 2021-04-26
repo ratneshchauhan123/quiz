@@ -37,3 +37,30 @@ button.hard {
   margin-bottom: 30px;
   color: brown;
 }
+.question-page .title, .submit-btn{
+  text-align: center;
+}
+.submit-btn button {
+  background: #a25454;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+}
+.timer {
+  text-align: right;
+  margin-bottom: 20px;
+}
+li {
+  list-style: none;
+  padding: 10px;
+}
+label {
+  padding: 9px;
+}
+.report.container {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}

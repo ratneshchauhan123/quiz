@@ -15,13 +15,13 @@ class Home extends React.Component {
                           Please choose quizz level
                        </div>
                         <div className="level 1">
-                             <button className="easy" >Easy</button>
+                             <button className="easy" onClick={() =>this.props.selectLabel("easy")}>Easy</button>
                         </div>
                         <div className="level 2">
-                             <button className="medium" >Medium</button>
+                             <button className="medium" onClick={() =>this.props.selectLabel('medium')}>Medium</button>
                         </div>
                         <div className="level 3">
-                             <button className="hard" >Hard</button>
+                             <button className="hard" onClick={() =>this.props.selectLabel('hard')}>Hard</button>
                         </div>
                    </div>
             </div>

@@ -1,10 +1,12 @@
 import React from "react";
+import List from "./ans-options"
 
 class Questions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            timer:30
+            timer:30,
+            answer:[]
         };
       }
       componentDidMount() {
@@ -22,25 +24,52 @@ class Questions extends React.Component {
         }
         
      }
+     checkoption =(ans, id) => {
+         let check=false;
+        this.setState(state => {
+            if(state.answer.length>0){
+             let a = state.answer.find(element => {
+                  if(element.id===id){
+                      element.answer=ans;
+                      check=true;
+                      return false;
+                  }
+              })
+              if(check===false){
+                let aa=state.answer.push({"id":id,"answer":ans})
+                return aa;
+              }
+              else{
+                 return a 
+              }
+            }
+            else{
+                let aa=state.answer.push({"id":id,"answer":ans})
+                return aa;
+            }
+            
+            
+        });
+        console.log(this.state.answer)
+        
+      }
+    
     
     render(){
-        console.log("jdkdd", this.props)
-        let listItems = this.props.question.map((number) =>{
-        //console.log("fsafsfff", number)
+        let listItems = this.props.question.map((number, index) =>{
+        
         return(
-             <div>
-                <div>{number.question}</div> 
-                {
-                    number.options.map((options) =>{
-                      <li key={options}>{options}</li>
-                    })
-                }
+             <div key={index}>
+                <div>{index+1}) {number.question}</div> 
+                <ul>
+                    <List list={number} checkoption = {this.checkoption} />
+                </ul>
              </div>
         )
         }
         );
         return(
-            <div className="question-page">
+            <div className="question-page container">
                    <div className="title">
                         Your Questions
                    </div>
@@ -51,7 +80,7 @@ class Questions extends React.Component {
                           {listItems}
                    </div>
                    <div className="submit-btn">
-
+                      <button onClick={() =>this.props.submitQuest(this.state.answer)}>Submit</button>
                    </div>
             </div>
         )
