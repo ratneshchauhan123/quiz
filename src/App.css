@@ -1,0 +1,39 @@
+.container {
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  max-width: 100%;
+}
+.home {
+  text-align: center;
+}
+.level button {
+  width: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 0 25px -8px inset;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  font-size: 18px;
+  outline: none;
+}
+.title {
+  margin: 20px 20px 30px;
+  font-size: 30px;
+}
+button.easy {
+  background: #bbeabb;
+}
+button.medium {
+  background: #ffdea2;
+}
+button.hard {
+  background: #fb9a9a;
+}
+.sub-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: brown;
+}
