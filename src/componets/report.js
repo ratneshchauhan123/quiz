@@ -4,7 +4,7 @@ class Reports extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            report:""
+            report:0
         }
     }
     componentDidMount() {
@@ -28,6 +28,9 @@ class Reports extends React.Component {
         
         return(
             <div className="report container">
+                <div className="title">
+                        Your Reports
+                   </div>
                    {this.state.report}
             </div>
         )
